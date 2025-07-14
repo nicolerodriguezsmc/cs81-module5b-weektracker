@@ -67,4 +67,14 @@ function mostCommonCategory(log) {
   return mostCommon;
 }
 
+// higher-order function that filters myWeek based on a test function
+function findLowEffortHighEnjoyment(testFn) {
+  return myWeek.filter(testFn);
+}
+
+//find low effort high enjoyment activities
+const lowEffortHighEnjoyment = findLowEffortHighEnjoyment(entry =>
+  entry.hoursSpent <= 1.5 && entry.enjoyment >= 8
+);
+
 
