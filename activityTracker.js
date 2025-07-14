@@ -23,4 +23,48 @@ const myWeek = [
 * - I predict that activities in the evening might be more enjoyable.
 */
 
+//Function to find most enjoyable activity
+function mostEnjoyableActivity(log) {
+  // Use reduce to go through each activity and find the most enjoyable one
+  const mostFun = log.reduce((currentMostFun, current) =>
+    // Compare the enjoyment scores between current and currentMostFun
+    // If the first statement is true, return current otherwise return currentMostFun
+    current.enjoyment > currentMostFun.enjoyment ? current : currentMostFun
+  );
+
+  // Return just the name of the most enjoyable activity
+  return mostFun.activity;
+}
+
+//Function to find the most common category
+function mostCommonCategory(log) {
+  // use map to make a list of all category names
+  const categories = log.map(entry => entry.category);
+
+  // find only unique categories
+  const uniqueCategories = [...new Set(categories)];
+
+  // initialize variables
+  let mostCommon = "";
+  let highestCount = 0;
+
+  // nested function to help count how many times a category appears
+  function countCategory(category) {
+    return log.filter(entry => entry.category === category).length;
+  }
+
+  // loop through each unique category and update mostCommon if needed
+  for (let category of uniqueCategories) {
+    const count = countCategory(category);
+
+    if (count > highestCount) {
+      highestCount = count; 
+      mostCommon = category;
+    }
+  }
+
+  // Return the mostCommon activity
+  return mostCommon;
+}
+
 
