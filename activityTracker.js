@@ -16,4 +16,11 @@ const myWeek = [
   { day: "Sunday", activity: "Film Club", category: "social", hoursSpent: 2, enjoyment: 7, timeOfDay: "evening", mood: "content" }
 ];
 
+/*
+* Predictions:
+* - I think "Hiking" on Saturday will be the most enjoyable activity.
+* - I think that the "creative" category will be the most common this week.
+* - I predict that activities in the evening might be more enjoyable.
+*/
+
 
