@@ -77,4 +77,10 @@ const lowEffortHighEnjoyment = findLowEffortHighEnjoyment(entry =>
   entry.hoursSpent <= 1.5 && entry.enjoyment >= 8
 );
 
+// Analyzing the weekly activities
+console.log("Analyzing My Weekly Activities...");
+console.log("Most enjoyable activity:", mostEnjoyableActivity(myWeek));
+console.log("Most common category:", mostCommonCategory(myWeek));
+console.log("Low-effort, high-enjoyment activities:",
+  lowEffortHighEnjoyment.map(entry => entry.activity).join(", "));
 
